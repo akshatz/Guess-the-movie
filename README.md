@@ -1,2 +1,2 @@
-# Guess-the-movie
+# Scrabble
 Udacity Project - 2

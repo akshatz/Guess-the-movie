@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class WordGame {
     private String movieToGuess;
@@ -5,8 +6,7 @@ public class WordGame {
     private String wrongLetters;
     private String rightLetters;
     private boolean gameWon;
-    public WordGame(String pathname)
-    {
+    public WordGame(String pathname) throws FileNotFoundException {
         ListItems movieList = new ListItems(pathname);
         movieToGuess = movieList.getRandomMovie().trim();
         pointsLost = 0;
@@ -37,7 +37,7 @@ public class WordGame {
         return gameWon;
     }
     public boolean gameEnded() {
-        if (pointsLost >= 10)
+        if (!(pointsLost >= 10))
         {
             return false;
         }
@@ -66,7 +66,6 @@ public class WordGame {
         }
     }
     public void guessLetter() {
-
         String guessedLetter = inputLetter();
         if (movieToGuess.toLowerCase().contains(guessedLetter)) {
             rightLetters += guessedLetter + guessedLetter.toUpperCase();
