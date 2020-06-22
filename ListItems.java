@@ -13,6 +13,7 @@ public class ListItems {
         while (scanner.hasNextLine()) {
             movies.add(scanner.nextLine());
         }
+        scanner.close();
     }
     public String getRandomMovie() {
         int movieIndex = (int)(Math.random() * movies.size());

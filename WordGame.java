@@ -53,6 +53,7 @@ public class WordGame {
         System.out.println("Guess a letter:");
         Scanner scanner = new Scanner(System.in);
         String letter = scanner.nextLine().toLowerCase();
+        scanner.close();
         if(!letter.matches("[a-z]")){
             System.out.println("That is not a letter.");
             return inputLetter();
